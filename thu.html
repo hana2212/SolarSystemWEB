@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="thu.css">
+    
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+        .box {
+            display: none;
+        }
+    </style>
+    <script>
+        var boxes = []; // Danh sách các box
+        var currentBoxIndex = 0; // Chỉ số box hiện tại
+
+        function showRandomBox() {
+            // Ẩn box hiện tại
+            var currentBox = document.querySelector('.box');
+            currentBox.style.display = 'none';
+
+            // Chọn ngẫu nhiên box tiếp theo
+            var nextBoxIndex = Math.floor(Math.random() * boxes.length);
+            currentBoxIndex = nextBoxIndex;
+
+            // Hiển thị box tiếp theo
+            var nextBox = boxes[nextBoxIndex];
+            nextBox.style.display = 'block';
+
+            // Tự động chuyển sang box khác sau 5 giây
+            setTimeout(showRandomBox, 5000);
+        }
+
+        window.addEventListener('DOMContentLoaded', function() {
+            // Lấy danh sách các box
+            boxes = Array.from(document.querySelectorAll('.box'));
+
+            // Hiển thị box đầu tiên
+            var firstBox = boxes[currentBoxIndex];
+            firstBox.style.display = 'block';
+
+            // Tự động chuyển sang box khác sau 5 giây
+            setTimeout(showRandomBox, 4000);
+        });
+    </script>
+</head>
+
+<body>
+
+    <div class="box">
+        <span class="borderLine"></span>
+        <form>
+            <img src="img/mercury.png" width="300" height="300">
+            <p style="color: aqua;">Sao Thủy được đặt theo tên thần Mercurius
+                Sao Thủy là hành tinh nhỏ nhất và gần mặt trời nhất trong Hệ mặt trời.
+                Sao Thủy chuyển động rất nhanh, chỉ mất 88 ngày Trái đất để quay quanh mặt trời, thực hiện một chu kỳ quỹ đạo. Đồng thời, khi nhìn từ Trái đất, sao Thủy cũng có chu kỳ giao hội khoảng 116 ngày, nhanh hơn những hành tinh khác.
+                Chính vì nhanh nhẹn mà người La Mã đã dùng tên vị thần liên lạc và đưa tin Mercurius để đặt tên cho sao Thủy. Ông cũng thần của du lịch, trừng trị và bảo vệ kẻ trộm và thần là thương mại.
+                Trong thần thoại Hy Lạp, tên của vị thần này là Hermes
+                </p>
+            <p><button class="w3-button w3-green" onclick="showRandomBox()">Next</button></p>
+        </form>
+    </div>
+
+
+    <div class="box" style="display: none;color:azure">
+        <span class="borderLine"></span>
+        <form>
+            <img src="img/sun.png" width="300" height="300">
+            <p>mặt trời</p>
+            <p><button class="w3-button w3-green" onclick="showRandomBox()">Next</button></p>
+        </form>
+    </div>
+
+
+
+    <div class="box" style="display: none;color:cornflowerblue">
+        <span class="borderLine"></span>
+        <form>
+            <img src="img/saturn.png" width="300" height="300">
+            <p>Khoảng cách trung bình giữa Sao Thổ và Mặt Trời là trên 1,4 tỉ cây số. 
+                Với tốc độ quỹ đạo trung bình bằng 9,69 km/s, Sao Thổ cần 10.759 ngày Trái đất - tương đương khoảng 29,5 năm, để đi hết một vòng quanh Mặt trời.
+                Sự "lâu lắc" này làm cho người Hy Lạp liên tưởng đến sự trôi đi của thời gian và đã đặt tên cho hành tinh là Cronus - vị thần của thời gian.
+                Trong tiếng La Mã, hành tinh này có tên là Saturn. Ngoài ra, Saturn còn được đặt cho ngày thứ 7 trong tuần - Saturday.
+                </p>
+            <p><button class="w3-button w3-green" onclick="showRandomBox()">Next</button></p>
+        </form>
+    </div>
+    <div class="box" style="display: none;color:aquamarine">
+        <span class="borderLine"></span>
+        <form>
+            <img src="img/jupiter.png" width="300" height="300">
+            <p>Sao Mộc là hành tinh lớn nhất trong Hệ mặt trời. Khi nhìn qua kính thiên văn, sao Mộc trông rất thanh tú, oai phong lẫm liệt như một vị vua. 
+                Người Hy Lạp đã lấy tên thần Zeus ngự trị trên ngai vàng tối cao đặt cho hành tinh này. Zeus là thần trị vì các vị thần, cai quản đỉnh Olympia, đồng thời cũng là thần sấm chớp.
+                Theo tiếng La Mã, thần Zeus có tên là Jupiter nên sao Mộc được gọi là Jupiter
+                </p>
+            <p><button class="w3-button w3-green" onclick="showRandomBox()">Next</button></p>
+        </form>
+    </div>
+
+    <div class="box" style="display: none;color:beige">
+        <span class="borderLine"></span>
+        <form>
+            <img src="img/mars.png" width="300" height="300">
+            <p>Khi quan sát người ta thấy Sao Hỏa có ánh sáng màu đỏ sẫm giống màu của chiến tranh.
+                Do đó, người Hy Lạp đặt tên cho hành tinh này theo tên vị thần chiến tranh Ares hay Mars trong tiếng La Mã.
+                Mars là vị thần quan trọng chỉ đứng sau thần Jupiter (thần Zeus) và thần Neptune (thần Poseidon) đồng thời cũng là người bảo vệ nông nghiệp La Mã, và là vị thần nổi bật nhất trong tôn giáo của quân đội La Mã.
+                Tên vị thần này còn được đặt cho tháng 3 (March).
+                </p>
+            <p><button class="w3-button w3-green" onclick="showRandomBox()">Next</button></p>
+        </form>
+    </div>
+
+
+    <div class="box" style="display: none;color:cornflowerblue">
+        <span class="borderLine"></span>
+        <form>
+            <img src="img/neptune.png" width="300" height="300">
+            <p> là hành tinh lớn thứ tư về đường kính và lớn thứ ba về khối lượng. Sao Hải Vương có khối lượng riêng lớn nhất trong số các hành tinh khí trong hệ Mặt trời. Sao Hải Vương có khối lượng gấp 17 lần k
+                hối lượng của Trái Đất và hơi lớn hơn khối lượng của Sao Thiên Vương (xấp xỉ bằng 15 lần của Trái Đất).</p>
+            <p><button class="w3-button w3-green" onclick="showRandomBox()">Next</button></p>
+        </form>
+    </div>
+    <div class="box" style="display: none; color:aquamarine;">
+        <span class="borderLine"></span>
+        <form>
+            <img src="img/uranus.png" width="300" height="300">
+            <p>Hành tinh thứ bảy tính từ mặt trời, 
+            Sao Thiên Vương là một quả cầu kỳ dị. Nó có những đám mây được tạo 
+            thành từ hydrogen sulfide, cùng một chất hóa học khiến trứng thối có mùi rất hôi. 
+            Nó quay từ đông sang tây giống như sao Kim
+
+            </p>
+            <p><button class="w3-button w3-green" onclick="showRandomBox()">Next</button></p>
+        </form>
+    </div>
+    <div class="box" style="display: none;color :	#7fff00;">
+        <span class="borderLine"></span>
+        <form>
+            <img src="img/venus.png" width="300" height="300">
+            <p>Sao Kim có tên xuất phát từ vị thần Venus - thần Vệ nữ trong thần thoại La Mã. Người Hy Lạp lấy tên vị thần Aphrodite gần như tương đường với thần Venus.
+                Venus được xem là vị thần của tình yêu, tình dục, và phụ nữ.
+                Trong thần thoại, thần Venus được xem là mẹ của người La Mã vì Aeneas con trai bà là người sống sót trong cuộc chiến thành Troy sau đó chạy sang Ý.
+                Ký hiệu thiên văn học cho sao Kim giống như ký hiệu sử dụng trong sinh học cho giống cái: một hình tròn với chữ thập ở bên dưới.
+                </p>
+            <p><button class="w3-button w3-green" onclick="showRandomBox()">Next</button></p>
+        </form>
+    </div>
+    
+</html>
+
+    
+   <!-- <div class="box">
+        <span class="borderLine"></span>
+        <form>
+            <img src="img/mercury.png" width="300" height="300">
+            <p>Đây là hình ảnh của Mercury</p>
+            <p><button class="w3-button w3-green" onclick="showRandomForm()">Next</button></p>
+        </form>
+    </div> -->
+   
